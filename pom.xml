@@ -13,6 +13,7 @@
 
   <modules>
     <module>test-containers-workshop-redis</module>
+    <module>test-containers-workshop-spring-boot</module>
   </modules>
 
 </project>
