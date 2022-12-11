@@ -14,11 +14,11 @@ import org.testcontainers.utility.DockerImageName;
 /**
  * @author Emre Şen (maemresen@yazilim.vip), 11/12/2022
  */
-class RedisService_SimpleTest {
+class RedisService_ConnectionTest {
 
     final GenericContainer testRedisContainer;
 
-    RedisService_SimpleTest() {
+    RedisService_ConnectionTest() {
         DockerImageName dockerImageName = DockerImageName.parse("redis:7.0.5-alpine");
         this.testRedisContainer = new GenericContainer(dockerImageName)
             .withCreateContainerCmdModifier((Consumer<CreateContainerCmd>) cmd -> cmd.withName("TEST-REDIS"))
@@ -35,7 +35,7 @@ class RedisService_SimpleTest {
     @AfterEach
     void wrapUp() {
         System.out.printf("Stopping::%s:%s%n", testRedisContainer.getContainerId(), testRedisContainer.getContainerName());
-        testRedisContainer.close();
+        testRedisContainer.stop();
     }
 
     @Test

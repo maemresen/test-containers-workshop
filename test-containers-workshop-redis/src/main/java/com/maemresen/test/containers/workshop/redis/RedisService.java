@@ -20,17 +20,17 @@ public class RedisService {
         return this.redisClient.connect();
     }
 
-    private RedisAsyncCommands<String, String> getAsyncCommand() {
-        return getConnection().async();
-    }
-
     public String putSync(String id, String name) throws ExecutionException, InterruptedException {
-        RedisAsyncCommands<String, String> asyncCommand = getAsyncCommand();
-        return asyncCommand.set(id, name).get();
+        try (StatefulRedisConnection<String, String> connection = getConnection()) {
+            RedisAsyncCommands<String, String> asyncCommand = connection.async();
+            return asyncCommand.set(id, name).get();
+        }
     }
 
     public String getSync(String id) throws ExecutionException, InterruptedException {
-        RedisAsyncCommands<String, String> asyncCommand = getAsyncCommand();
-        return asyncCommand.get(id).get();
+        try (StatefulRedisConnection<String, String> connection = getConnection()) {
+            RedisAsyncCommands<String, String> asyncCommand = connection.async();
+            return asyncCommand.get(id).get();
+        }
     }
 }
