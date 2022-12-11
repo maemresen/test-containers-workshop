@@ -12,8 +12,8 @@ public class RedisService {
 
     private final RedisClient redisClient;
 
-    public RedisService(String connectionString) {
-        this.redisClient = RedisClient.create(connectionString);
+    public RedisService(String host, Integer port) {
+        this.redisClient = RedisClient.create(String.format("redis://%s:%d/%d", host, port, 0));
     }
 
     public StatefulRedisConnection<String, String> getConnection() {
