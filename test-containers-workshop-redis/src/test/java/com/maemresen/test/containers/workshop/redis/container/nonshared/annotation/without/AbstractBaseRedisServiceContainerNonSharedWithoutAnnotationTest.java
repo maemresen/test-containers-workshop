@@ -36,7 +36,6 @@ abstract class AbstractBaseRedisServiceContainerNonSharedWithoutAnnotationTest {
     void setUp(TestInfo testInfo) {
         testRedisContainer.start();
         System.out.printf("Test:%s::Starting::%s%n", testInfo.getDisplayName(), testRedisContainer.getContainerName());
-        System.out.printf("Test:%s::Connecting to Redis%n", testInfo.getDisplayName());
     }
 
     @AfterEach
