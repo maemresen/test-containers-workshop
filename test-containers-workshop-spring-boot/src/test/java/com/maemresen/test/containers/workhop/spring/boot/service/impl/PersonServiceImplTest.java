@@ -4,6 +4,7 @@ import com.maemresen.test.containers.workhop.spring.boot.domain.Person;
 import com.maemresen.test.containers.workhop.spring.boot.repository.PersonRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -45,17 +46,22 @@ public class PersonServiceImplTest {
     @Transactional
     @Test
     public void test_findAllSuccess() {
-        personRepository.save(Person.builder().name("Emre").surname("Sen").build());
-        personRepository.save(Person.builder().name("Jack").surname("Alexander").build());
-        personRepository.save(Person.builder().name("Martin").surname("Tylor").build());
-        personRepository.save(Person.builder().name("Sophia").surname("Martinez").build());
+        Set<Person> mockPersons = Set.of(
+            Person.builder().name("Emre").surname("Sen").build(),
+            Person.builder().name("Jack").surname("Alexander").build(),
+            Person.builder().name("Martin").surname("Tylor").build(),
+            Person.builder().name("Sophia").surname("Martinez").build()
+        );
+        personRepository.saveAll(mockPersons);
 
         List<Person> allPeople = personRepository.findAll();
-        Optional<Person> emre = personRepository.findTopByNameIgnoreCase("emre");
 
-        Assertions.assertTrue(emre.isPresent());
         Assertions.assertNotNull(allPeople);
         Assertions.assertEquals(4, allPeople.size());
+        mockPersons.forEach(mockPerson -> {
+            String mockPersonName = mockPerson.getName();
+            Assertions.assertTrue(allPeople.stream().anyMatch(foundPerson -> foundPerson.getName().equalsIgnoreCase(mockPersonName)));
+        });
     }
 
     @Transactional
