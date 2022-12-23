@@ -1,0 +1,1 @@
+Testcontainer example usage with redis with using annotation based approach

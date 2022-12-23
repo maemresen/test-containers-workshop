@@ -1,4 +1,4 @@
-package com.maemresen.tcw.redis.container.nonshared.annotation.without;
+package com.maemresen.tcw.without.annotation;
 
 import com.github.dockerjava.api.command.CreateContainerCmd;
 import java.util.function.Consumer;
