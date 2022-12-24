@@ -13,7 +13,7 @@
 
   <modules>
     <module>tcw-redis</module>
-    <module>tcw-spring-boot-postgresql</module>
+    <module>tcw-spring-boot</module>
   </modules>
 
 </project>

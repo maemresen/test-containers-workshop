@@ -1,7 +1,7 @@
-package com.maemresen.tcw.spring.boot.service.impl;
+package com.maemresen.tcw.sb.postgresql.service.impl;
 
-import com.maemresen.tcw.spring.boot.domain.Person;
-import com.maemresen.tcw.spring.boot.repository.PersonRepository;
+import com.maemresen.tcw.sb.postgresql.repository.PersonRepository;
+import com.maemresen.tcw.sb.postgresql.domain.Person;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;

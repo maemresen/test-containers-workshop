@@ -1,4 +1,4 @@
-package com.maemresen.tcw.spring.boot.domain;
+package com.maemresen.tcw.sb.postgresql.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

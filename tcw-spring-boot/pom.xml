@@ -10,8 +10,12 @@
     <version>0.0.01</version>
   </parent>
 
-  <artifactId>tcw-spring-boot-postgresql</artifactId>
-  <name>Spring Boot + PostgreSQL Exzample</name>
+  <artifactId>tcw-spring-boot</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>tcw-sb-postgresql</module>
+  </modules>
 
   <properties>
     <java.version>11</java.version>
@@ -20,6 +24,7 @@
     <spring.boot.version>3.0.0</spring.boot.version>
     <testcontainers.version>1.17.6</testcontainers.version>
   </properties>
+
 
   <dependencyManagement>
     <dependencies>
@@ -43,24 +48,9 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-    </dependency>
-
-    <!-- This dependency is not necessary -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers</artifactId>
@@ -71,12 +61,14 @@
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- This dependency is not necessary -->
     <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>postgresql</artifactId>
-      <scope>test</scope>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
     </dependency>
   </dependencies>
+
 
   <build>
     <plugins>

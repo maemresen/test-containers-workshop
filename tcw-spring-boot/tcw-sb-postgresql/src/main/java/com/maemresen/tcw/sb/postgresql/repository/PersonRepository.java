@@ -1,6 +1,6 @@
-package com.maemresen.tcw.spring.boot.repository;
+package com.maemresen.tcw.sb.postgresql.repository;
 
-import com.maemresen.tcw.spring.boot.domain.Person;
+import com.maemresen.tcw.sb.postgresql.domain.Person;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
