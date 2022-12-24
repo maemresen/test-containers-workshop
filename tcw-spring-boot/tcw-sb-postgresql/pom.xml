@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>tcw-sb-postgresql</artifactId>
-  <name>Spring Boot + PostgreSQL Exzample</name>
+  <name>Spring Boot + PostgreSQL Example</name>
 
   <dependencies>
     <dependency>

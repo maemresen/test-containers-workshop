@@ -11,10 +11,10 @@
   </parent>
 
   <artifactId>tcw-sb-localstack</artifactId>
+  <name>Spring Boot + Localstack Example</name>
   <packaging>pom</packaging>
 
   <modules>
     <module>tcw-sb-ls-amazon-sqs</module>
   </modules>
-
 </project>

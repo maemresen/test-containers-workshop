@@ -11,6 +11,7 @@
   </parent>
 
   <artifactId>tcw-spring-boot</artifactId>
+  <name>Spring Boot Examples</name>
   <packaging>pom</packaging>
 
   <modules>
