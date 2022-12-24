@@ -1,4 +1,4 @@
-package com.maemresen.tcw.with.annotation;
+package com.maemresen.tcw.without.annotation;
 
 import com.maemresen.tcw.redis.RedisService;
 import org.junit.jupiter.api.Assertions;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Emre Şen (maemresen@yazilim.vip), 11/12/2022
  */
-class RedisService_InteractionContainerNonSharedWithAnnotationTest extends AbstractBaseRedisServiceContainerNonSharedWithAnnotationTest {
+class RedisServiceInteractionWoAnnotationTest extends AbstractBaseRedisServiceWoAnnotationTest {
 
     RedisService redisService;
 

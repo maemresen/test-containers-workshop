@@ -12,12 +12,12 @@ import org.testcontainers.utility.DockerImageName;
  * @author Emre Şen (maemresen@yazilim.vip), 11/12/2022
  */
 @Testcontainers
-abstract class AbstractBaseRedisServiceContainerNonSharedWithAnnotationTest {
+abstract class AbstractBaseRedisServiceTest {
 
     @Container
     final GenericContainer testRedisContainer;
 
-    AbstractBaseRedisServiceContainerNonSharedWithAnnotationTest() {
+    AbstractBaseRedisServiceTest() {
         DockerImageName dockerImageName = DockerImageName.parse("redis:7.0.5-alpine");
         this.testRedisContainer = new GenericContainer(dockerImageName)
             .withCreateContainerCmdModifier((Consumer<CreateContainerCmd>) cmd -> cmd.withName("TEST-REDIS"))
