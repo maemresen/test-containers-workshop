@@ -15,6 +15,7 @@
 
   <modules>
     <module>tcw-sb-postgresql</module>
+    <module>tcw-sb-localstack</module>
   </modules>
 
   <properties>
